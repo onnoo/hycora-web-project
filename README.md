@@ -7,7 +7,8 @@
 1. `git clone https://github.com/onnoo/hycora-web-project.git`
 2. `cd hycora-web-project`
 3. `npm install`
-4. `npm run`
+4. `npm start`
+5. 주소창에 localhost:3000 접속
 
 
 
