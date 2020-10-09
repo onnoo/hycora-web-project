@@ -1,0 +1,6 @@
+CREATE TABLE comment
+(
+    USER_ID varchar(255)  PRIMARY KEY,
+    CONTENT varchar(255) NOT NULL,
+    DATE DATETIME
+);
