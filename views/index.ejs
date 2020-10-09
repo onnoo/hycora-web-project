@@ -8,17 +8,19 @@
 	<script>
 		function addElement () {
 			const newChild = document.createElement('p');
-			const textNode = document.createTextNode(document.getElementById('input').value); 		  
-​
-			newChild.appendChild(textNode); 
-​
+			const textNode = document.createTextNode(document.getElementById('input').value);
+			newChild.appendChild(textNode);
 			const parent = document.getElementById('comments');
 			const children = parent.childNodes;
-			const fistChild = children[0]
-​
-			parent.insertBefore(newChild, fistChild);
-​
-		 	document.getElementById('input').value = ''
+
+			if(children.length=0){
+				parent.appendChild(newChild)
+			}
+			else{
+				const fistChild = children[0]
+				parent.insertBefore(newChild, fistChild);
+			}
+			document.getElementById('input').value = ''
 		}
 	</script>
 </head>
