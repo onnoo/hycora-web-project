@@ -10,13 +10,18 @@
 4. `npm start`
 5. 주소창에 localhost:3000 접속
 
+## Test run
 
+reload 기능이 추가되었습니다.
+
+1. (required) `npm install -g nodemon`
+2. `npm test`
 
 ## Contribute
 
 ### Pull Request
 
-저장소를 Fork 후 최신 `develop` 브랜치로부터 `feature/{feature_name}` 브랜치를 만듭니다. 해당 브랜치에서는 구현할 기능에 충실한 코드 수정을 진행합니다. (한 기능에 대해서 복수의 커밋도 가능합니다.) 기능 구현이 완료되었다면, 자신의 Fork 저장소에 푸시 후 이 저장소의 `develop` 브랜치로 `pull request`를 요청하세요.
+저장소를 Fork 후 최신 `develop` 브랜치로부터 `feature/{feature_name}` 브랜치를 만듭니다. 해당 브랜치에서는 구현할 기능에 충실한 코드 수정을 진행합니다. (한 기능에 대해서 복수의 커밋도 가능합니다.) 기능 구현이 완료되었다면, 자신의 Fork 저장소에 푸시 후 이 저장소의 `develop` 브랜치로 `pull request`를 요청하세요. 관련된 이슈도 참조하면 좋습니다.
 
 ### Commit
 
