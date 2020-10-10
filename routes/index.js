@@ -20,5 +20,14 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Comment', userData: results })
   });
 });
+router.post('/addComment',function (req,res,next){
+  var content = req.body.insertform;
+  connection.query('insert into comment(CONTENT) VALUE(?)',[content],function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.redirect('/');
+  })
+})
 
 module.exports = router;
