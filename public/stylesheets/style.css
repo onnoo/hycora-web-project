@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
+
 a {
   color: #00B7FF;
 }
@@ -16,7 +18,7 @@ input{
 	height:20px;
 }
 
-li{
+#comments li{
 	list-style: none;
     margin: 5px;
     padding: 5px 0px 5px 5px;
@@ -25,14 +27,30 @@ li{
     font-size: 15px;       
 }
 
-li:last-child{
+#comments li:last-child{
 	border-bottom:0px;
 }
 
-li:before {
+#comments li:before {
     content: ">";
     display: inline-block;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
     font-size:5px;
+}
+
+a{	
+	text-decoration: none;	
+	padding:8px;
+	color:black;
+}
+ul#nav li{		
+	display:inline;
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+}
+
+h1{	
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
 }
