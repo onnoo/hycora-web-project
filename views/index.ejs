@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-​
+
 <head>	
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='/stylesheets/style.css' />
@@ -21,26 +21,31 @@
 				const fistChild = children[0]
 				parent.insertBefore(newChild, fistChild);
 			}
+
 			document.getElementById('input').value = ''
 		}		
 
 	</script>
 </head>
-​
-<body>​
-	<h1>Hycora</h1>
-	<ul id="nav">
-	  <li><a href="./">Comments</a></li>
-	  <li><a href="/users">Information</a></li>	  
-	</ul>
-
-	<input type="text" id="input">
-	<button onclick="addElement()">쓰기</button>
+<body>
+	<form method="post" action="/addComment">
+		<input name="insertform" type="text" id="input">
+		<input type="submit">
+	</form>
+	<!--		<button onclick="addElement()">쓰기</button>-->
 	<div id="comments">
 		<!-- children -->
-	</div>	​
+		<ul>
+			<% for (var user of userData) { %>
+				<li>
+					<%= user.CONTENT %>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>	
 </body>
-​
+
 </html>
