@@ -2,9 +2,10 @@
 <html>
 
 <head>
-	<title><%=title %></title>
+	<title><%= title %></title>
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='/stylesheets/style.css' />
+<<<<<<< HEAD
 	<script>
 		function addElement () {
 			const newChild = document.createElement('li');
@@ -24,18 +25,34 @@
 		}		
 
 	</script>
+=======
+>>>>>>> upstream/develop
 </head>
-
 <body>
-	<input type="text" id="input">
-	<button onclick="addElement()">쓰기</button>
+	<!-- Title -->
+	<h1><%= title %></h1>
+
+	<!-- Navigation Bar -->
+	<div id="nav">
+		<ul>
+		  <li><a href="./">Comments</a></li>
+		  <li><a href="/users">Information</a></li>	  
+		</ul>
+	</div>
+
+	<!-- Comment Insert Form -->
+	<form method="post" action="/addComment">
+		<input name="insertform" type="text" id="input">
+		<input type="submit" value="쓰기" id="submit">
+	</form>
+
+	<!-- Comment List -->
 	<div id="comments">
-		<!-- children -->
 		<ul>
 			<% for (var user of userData) { %>
-			<li>
-				<%= user.CONTENT %>
-			</li>
+				<li>
+					<%= user.CONTENT %>
+				</li>
 			<% } %>
 		</ul>
 	</div>
