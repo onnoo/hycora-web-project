@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-​
+
 <head>
 	<title><%=title %></title>
 	<meta charset="utf-8">
@@ -25,15 +25,23 @@
 
 	</script>
 </head>
-​
-<body>​
+
+<body>
 	<input type="text" id="input">
 	<button onclick="addElement()">쓰기</button>
 	<div id="comments">
 		<!-- children -->
-	</div>	​
+		<ul>
+			<% for (var user of userData) { %>
+			<li>
+				<%= user.CONTENT %>
+			</li>
+			<% } %>
+		</ul>
+	</div>
+
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>	
 </body>
-​
+
 </html>
