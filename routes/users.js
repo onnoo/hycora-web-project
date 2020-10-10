@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
       console.log(error);
     }
     // 쿼리 결과를 EJS로 넘겨준다.
-    res.render('users', { title: 'Contributors', userData: results })
+    res.render('users', { title: 'HY-CoRA', userData: results })
   });
 });
 

@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<head>	
+<head>
+	<title><%= title %></title>
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='/stylesheets/style.css' />
-	
-	<title>Hycora</title>
-	<script>
-		function addElement () {
-			const newChild = document.createElement('li');
-			const textNode = document.createTextNode(document.getElementById('input').value);
-			newChild.appendChild(textNode);
-			const parent = document.getElementById('comments');
-			const children = parent.childNodes;
-
-			if(children.length=0){
-				parent.appendChild(newChild)
-			}
-			else{
-				const fistChild = children[0]
-				parent.insertBefore(newChild, fistChild);
-			}
-
-			document.getElementById('input').value = ''
-		}		
-
-	</script>
 </head>
 <body>
+	<!-- Title -->
+	<h1><%= title %></h1>
+
+	<!-- Navigation Bar -->
+	<div id="nav">
+		<ul>
+		  <li><a href="./">Comments</a></li>
+		  <li><a href="/users">Information</a></li>	  
+		</ul>
+	</div>
+
+	<!-- Comment Insert Form -->
 	<form method="post" action="/addComment">
 		<input name="insertform" type="text" id="input">
-		<input type="submit">
+		<input type="submit" value="쓰기" id="submit">
 	</form>
-	<!--		<button onclick="addElement()">쓰기</button>-->
+
+	<!-- Comment List -->
 	<div id="comments">
-		<!-- children -->
 		<ul>
 			<% for (var user of userData) { %>
 				<li>
