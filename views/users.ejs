@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title><%= title %></title>
+	<meta charset="utf-8">
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script type="text/javascript">
+		// query 결과를 javascript object로 가져오기
+		var userDataObj = <%- JSON.stringify(userData) %>
+		console.log(userDataObj)
+	</script>
+</head>
+
+<body>
+	<!-- EJS 문법 : foreach -->
+	<% for (var user of userData) { %>
+		<p>
+			<%= user.id %>, <%= user.name %>, <%= user.major %>, <%= user.github_id %>
+		</p>
+	<% } %>
+
+	<!-- required for hot reload -->
+	<script src="/reload/reload.js"></script>
+</body>
+
+</html>
