@@ -1,8 +1,38 @@
+a {
+  color: #00B7FF;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+button{
+	height:25px;
+}
+
+input{
+	width:80%;
+	height:20px;
+}
+
+li{
+	list-style: none;
+    margin: 5px;
+    padding: 5px 0px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 15px;       
+}
+
+li:last-child{
+	border-bottom:0px;
+}
+
+li:before {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px;
+    font-size:5px;
 }

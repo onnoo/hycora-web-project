@@ -7,7 +7,7 @@
 	<link rel='stylesheet' href='/stylesheets/style.css' />
 	<script>
 		function addElement () {
-			const newChild = document.createElement('p');
+			const newChild = document.createElement('li');
 			const textNode = document.createTextNode(document.getElementById('input').value);
 			newChild.appendChild(textNode);
 			const parent = document.getElementById('comments');
@@ -21,7 +21,8 @@
 				parent.insertBefore(newChild, fistChild);
 			}
 			document.getElementById('input').value = ''
-		}
+		}		
+
 	</script>
 </head>
 
@@ -38,7 +39,9 @@
 			<% } %>
 		</ul>
 	</div>
-	<script src="/reload/reload.js"></script>
+
+	<!-- required for hot reload -->
+	<script src="/reload/reload.js"></script>	
 </body>
 
 </html>
