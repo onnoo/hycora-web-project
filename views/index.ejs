@@ -31,7 +31,15 @@
 	<button onclick="addElement()">쓰기</button>
 	<div id="comments">
 		<!-- children -->
+		<ul>
+			<% for (var user of userData) { %>
+			<li>
+				<%= user.CONTENT %>
+			</li>
+			<% } %>
+		</ul>
 	</div>
+
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>	
 </body>

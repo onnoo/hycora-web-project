@@ -21,17 +21,4 @@ reload 기능이 추가되었습니다.
 
 ## Contribute
 
-### Pull Request
-
-저장소를 Fork 후 최신 `develop` 브랜치로부터 `feature/{feature_name}` 브랜치를 만듭니다. 해당 브랜치에서는 구현할 기능에 충실한 코드 수정을 진행합니다. (한 기능에 대해서 복수의 커밋도 가능합니다.) 기능 구현이 완료되었다면, 자신의 Fork 저장소에 푸시 후 이 저장소의 `develop` 브랜치로 `pull request`를 요청하세요. 관련된 이슈도 참조하면 좋습니다.
-
-### Commit
-
-커밋 메세지 Rule ([출처](https://blog.ull.im/engineering/2019/03/10/logs-on-git.html))
-
-* `Fix` : 보통 올바르지 않은 동작을 고친 경우에 사용합니다.
-* `Add` : 코드나 테스트, 예제, 문서 등의 추가가 있을 때 사용합니다
-* `Remove` : 코드의 삭제가 있을 때 사용합니다.
-* ...
-
-> 하나의 동작이나 변화가 생기는 단위로 커밋을 작성합니다.
+읽어볼 것! : [링크](https://github.com/onnoo/hycora-web-project/wiki/%ED%98%91%EC%97%85-%EB%B0%A9%EB%B2%95-(Fork%EC%99%80-Pull-request))
