@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 ​
-<head>
-	<title><%=title %></title>
+<head>	
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='/stylesheets/style.css' />
+	
+	<title>Hycora</title>
 	<script>
 		function addElement () {
 			const newChild = document.createElement('li');
@@ -27,6 +28,12 @@
 </head>
 ​
 <body>​
+	<h1>Hycora</h1>
+	<ul id="nav">
+	  <li><a href="./">Comments</a></li>
+	  <li><a href="/users">Information</a></li>	  
+	</ul>
+
 	<input type="text" id="input">
 	<button onclick="addElement()">쓰기</button>
 	<div id="comments">
