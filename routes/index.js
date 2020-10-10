@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get('/', function(req, res, next) {
-  connection.query('SELECT * from comment', function (error, results, fields) {
+  connection.query('SELECT * from comment ORDER BY DATE DESC', function (error, results, fields) {
     if (error) {
       console.log(error);
     }
