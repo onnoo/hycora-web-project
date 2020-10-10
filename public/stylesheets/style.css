@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 a {
   color: #00B7FF;
 }
@@ -5,8 +6,19 @@ a {
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+=======
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
+
+/* Reset CSS >>> */
+* {
+	padding: 0;
+	margin: 0;
+>>>>>>> upstream/develop
+}
+/* Reset CSS <<< */
+
+<<<<<<< HEAD
 button{
 	height:25px;
 }
@@ -17,6 +29,33 @@ input{
 }
 
 li{
+=======
+a {
+	color: #505050;
+}
+
+
+body {
+	max-width: 80%;
+	margin: auto;
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/*
+input{
+	width:80%;
+	height:20px;
+}*/
+
+ul {
+	padding-inline-start: 0px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+#comments li {
+>>>>>>> upstream/develop
 	list-style: none;
     margin: 5px;
     padding: 5px 0px 5px 5px;
@@ -25,14 +64,66 @@ li{
     font-size: 15px;       
 }
 
+<<<<<<< HEAD
 li:last-child{
 	border-bottom:0px;
 }
 
 li:before {
+=======
+#comments li:last-child {
+	border-bottom:0px;
+}
+
+#comments li:before {
+>>>>>>> upstream/develop
     content: ">";
     display: inline-block;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
     font-size:5px;
+<<<<<<< HEAD
+=======
+}
+
+#nav {
+	padding: 10px;
+	border: 1px solid #DDDDDD;
+	box-shadow: 2px 2px 1px 0px #CCCCCC;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+#nav a {	
+	text-decoration: none;	
+	/*color:black;*/
+}
+
+#nav li {
+	display:inline;
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	margin: 0px 10px;
+}
+
+#input {
+	display: inline-block;
+	width: 80%;
+}
+
+#submit {
+	display: inline-block;
+	height: 21px;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+table {
+	width: 100%;
+	border: 1px solid #444444;
+	text-align: center;
+>>>>>>> upstream/develop
 }
