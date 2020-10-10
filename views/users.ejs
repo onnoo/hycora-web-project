@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+
+<style>
+	table {
+		width: 100%;
+		border: 1px solid #444444;
+		text-align: center;
+	}
+</style>
+
 <head>
 	<title><%= title %></title>
 	<meta charset="utf-8">
@@ -13,13 +22,24 @@
 </head>
 
 <body>
+	<h1>Users</h1>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Major</th>
+			<th>Github_id</th>
+		</tr>
 	<!-- EJS 문법 : foreach -->
 	<% for (var user of userData) { %>
-		<p>
-			<%= user.id %>, <%= user.name %>, <%= user.major %>, <%= user.github_id %>
-		</p>
+		<tr>
+			<td><%= user.id %></td>
+			<td><%= user.name %></td>
+			<td><%= user.major %></td>
+			<td><%= user.github_id %></td>
+		</tr>
 	<% } %>
-
+	</table>
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>
 </body>
