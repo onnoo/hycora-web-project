@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
     if (error) {
       console.log(error);
     }
-    res.json(results)
+    // 쿼리 결과를 EJS로 넘겨준다.
+    res.render('users', { title: 'Contributors', userData: results })
   });
 });
 
