@@ -31,7 +31,18 @@
 	<div id="comments">
 		<!-- children -->
 	</div>
-
+	<table>
+		<tr>
+			<th>Comment</th>
+			<th>Date</th>
+		</tr>
+	<% for (var user of userData) { %>
+		<tr>
+		<td><%= user.CONTENT %></td>
+		<td><%= user.DATE %></td>
+		</tr>
+	<% } %>
+	</table>
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>
 </body>
