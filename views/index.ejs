@@ -3,12 +3,34 @@
 
 <head>
 	<title><%=title %></title>
+	<meta charset="utf-8">
 	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script>
+		function addElement () {
+			const newChild = document.createElement('p');
+			const textNode = document.createTextNode(document.getElementById('input').value);
+			newChild.appendChild(textNode);
+			const parent = document.getElementById('comments');
+			const children = parent.childNodes;
+
+			if(children.length=0){
+				parent.appendChild(newChild)
+			}
+			else{
+				const fistChild = children[0]
+				parent.insertBefore(newChild, fistChild);
+			}
+			document.getElementById('input').value = ''
+		}
+	</script>
 </head>
 
 <body>
-	<h1><%=title %></h1>
-	<p>Welcome to <%=title %></p>
+	<input type="text" id="input">
+	<button onclick="addElement()">쓰기</button>
+	<div id="comments">
+		<!-- children -->
+	</div>
 
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>

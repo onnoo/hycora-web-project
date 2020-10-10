@@ -2,6 +2,8 @@
 
 하이코라 웹페이지 프로젝트 (Keep It Simple)
 
+> https://hycora-dev.herokuapp.com/
+
 ## Run
 
 1. `git clone https://github.com/onnoo/hycora-web-project.git`
