@@ -20,26 +20,28 @@
 				const fistChild = children[0]
 				parent.insertBefore(newChild, fistChild);
 			}
+
 			document.getElementById('input').value = ''
 		}		
 
 	</script>
 </head>
-
 <body>
-	<input type="text" id="input">
-	<button onclick="addElement()">쓰기</button>
+	<form method="post" action="/addComment">
+		<input name="insertform" type="text" id="input">
+		<input type="submit">
+	</form>
+	<!--		<button onclick="addElement()">쓰기</button>-->
 	<div id="comments">
 		<!-- children -->
 		<ul>
 			<% for (var user of userData) { %>
-			<li>
-				<%= user.CONTENT %>
-			</li>
+				<li>
+					<%= user.CONTENT %>
+				</li>
 			<% } %>
 		</ul>
 	</div>
-
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>	
 </body>
