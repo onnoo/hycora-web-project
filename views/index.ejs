@@ -4,39 +4,57 @@
 <head>
 	<title><%= title %></title>
 	<meta charset="utf-8">
-	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-	<!-- Title -->
-	<h1><%= title %></h1>
+	<header>
+		<h1><%= title %></h1>
 
-	<!-- Navigation Bar -->
-	<div id="nav">
-		<ul>
-		  <li><a href="./">Comments</a></li>
-		  <li><a href="/users">Information</a></li>	  
-		</ul>
-	</div>
+		<div class="nav">
+			<ul>
+				<li><</li>
+				<li><a href="./">Comments</a></li>
+				<li>/</li>
+				<li><a href="/users">Information</a></li>
+				<li>></li>
+			</ul>
+		</div>
+	</header>
 
-	<!-- Comment Insert Form -->
-	<form method="post" action="/addComment">
-		<input name="insertform" type="text" id="input">
-		<input type="submit" value="쓰기" id="submit">
-	</form>
+	<main>
+		<!-- Comment List -->
+		<div id="comments">
+			<ul>
+				<form method="post" action="/addComment">
+					<li>
+						<input id="input" name="insertform" type="text" placeholder="한마디를 적어보세요." autocomplete="off">
+					</li>
+					<!-- <input type="submit" value="쓰기" id="submit"> -->
+				</form>
+				<% for (var user of userData) { %>
+					<li>
+						<%= user.CONTENT %>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	</main>
 
-	<!-- Comment List -->
-	<div id="comments">
-		<ul>
-			<% for (var user of userData) { %>
-				<li>
-					<%= user.CONTENT %>
-				</li>
-			<% } %>
-		</ul>
-	</div>
+	<footer>
+		<div>
+			<h1>HY-CoRA</h1>
+			<p>경기도 안산시 상록구 한양대학로55 학생복지관4층 425호</p>
+		</div>
+	</footer>
 
 	<!-- required for hot reload -->
-	<script src="/reload/reload.js"></script>	
+	<script src="/reload/reload.js"></script>
+	<script>
+		const input = document.getElementById("input")
+		input.focus()
+	</script>
 </body>
 
 </html>

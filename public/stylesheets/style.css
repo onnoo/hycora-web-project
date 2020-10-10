@@ -1,30 +1,64 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
-
-/* Reset CSS >>> */
-* {
-	padding: 0;
-	margin: 0;
-}
-/* Reset CSS <<< */
-
-a {
-	color: #505050;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
 
 body {
-	max-width: 80%;
 	margin: auto;
-	padding: 50px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #efefef;
 }
 
-/*
-input{
-	width:80%;
-	height:20px;
-}*/
+header {
+	background-color: #393b44;
+	color: white;
+	padding-bottom: 10px;
+	border-bottom: 5px solid #132743;
+}
+
+header h1 {
+	text-align: center;
+	font-size: 45pt;
+	margin: 0;
+	padding: 50px 0px 25px 0px;
+}
+
+header a, header a:visited {
+	color: white;
+}
+
+.nav {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 30px;
+	margin: auto;
+	max-width: 70%;
+}
+
+.nav a {	
+	text-decoration: none;	
+	/*color:black;*/
+}
+
+.nav li {
+	display:inline;
+	font-size:15px;
+	margin: 0 10px;
+}
+
+main, footer > div {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+main {
+	padding-bottom: 80px;
+}
+
+footer {
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	background-color: #393b44;
+	color: white;
+	padding: 64px 0 40px 0;
+}
 
 ul {
 	padding-inline-start: 0px;
@@ -34,11 +68,17 @@ ul {
 
 #comments li {
 	list-style: none;
-    margin: 5px;
-    padding: 5px 0px 5px 5px;
+    margin: 20px 0;
+    padding: 50px;
     margin-bottom: 5px;
-    border-bottom: 1px solid #efefef;
-    font-size: 15px;       
+    font-size: 30px;
+
+   	border: 1px solid #dddddd;
+   	border-radius: 7px;
+   	box-shadow: 0 4px 15px 0 rgba(0,0,0,.15);
+   	background-color: white;
+
+   	font-family: 'Nanum Myeongjo', serif;
 }
 
 #comments li:last-child {
@@ -46,46 +86,26 @@ ul {
 }
 
 #comments li:before {
-    content: ">";
+    content: "$";
     display: inline-block;
     vertical-align: middle;
     padding: 0px 5px 6px 0px;
-    font-size:5px;
-}
-
-#nav {
-	padding: 10px;
-	border: 1px solid #DDDDDD;
-	box-shadow: 2px 2px 1px 0px #CCCCCC;
-	border-radius: 10px;
-	margin-bottom: 30px;
-}
-
-#nav a {	
-	text-decoration: none;	
-	/*color:black;*/
-}
-
-#nav li {
-	display:inline;
-	font-family: 'Roboto', sans-serif;
-	font-size:15px;
-	margin: 0px 10px;
+    font-size:30px;
 }
 
 #input {
-	display: inline-block;
-	width: 80%;
+	border: none;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #eaeaea;
+	min-width: 85%;
+}
+#input:focus {
+    outline: none;
 }
 
 #submit {
 	display: inline-block;
 	height: 21px;
-}
-
-h1 {
-	text-align: center;
-	font-family: 'Roboto', sans-serif;
 }
 
 table {
