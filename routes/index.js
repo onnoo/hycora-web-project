@@ -12,13 +12,23 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get('/', function(req, res, next) {
-  connection.query('SELECT * from comment', function (error, results, fields) {
+  connection.query('SELECT * from comment ORDER BY DATE DESC', function (error, results, fields) {
     if (error) {
       console.log(error);
     }
     // 쿼리 결과를 EJS로 넘겨준다.
-    res.render('index', { title: 'Comment', userData: results })
+    res.render('index', { title: 'HY-CoRA', userData: results })
   });
 });
+
+router.post('/addComment',function (req,res,next){
+  var content = req.body.insertform;
+  connection.query('insert into comment(CONTENT) VALUE(?)',[content],function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.redirect('/');
+  })
+})
 
 module.exports = router;
