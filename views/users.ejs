@@ -46,7 +46,7 @@
 				<td><%= user.id %></td>
 				<td><%= user.name %></td>
 				<td><%= user.major %></td>
-				<td><%= user.github_id %></td>
+				<td><a href='https://github.com/<%= user.github_id %>'><%= user.github_id %></a></td>
 			</tr>
 		<% } %>
 		</tbody>
