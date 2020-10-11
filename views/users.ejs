@@ -4,37 +4,62 @@
 <head>
 	<title><%= title %></title>
 	<meta charset="utf-8">
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<script type="text/javascript">
-		// query 결과를 javascript object로 가져오기
-		var userDataObj = <%- JSON.stringify(userData) %>
-		console.log(userDataObj)
-	</script>
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>	
-	<h1><%= title %></h1>
-	<ul id="nav">
-	  <li><a href="./">Comments</a></li>
-	  <li><a href="/users">Information</a></li>	  
-	</ul>
-	<table>
-		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Major</th>
-			<th>Github_id</th>
-		</tr>
-	<!-- EJS 문법 : foreach -->
-	<% for (var user of userData) { %>
-		<tr>
-			<td><%= user.id %></td>
-			<td><%= user.name %></td>
-			<td><%= user.major %></td>
-			<td><%= user.github_id %></td>
-		</tr>
-	<% } %>
-	</table>
+<body>
+	<header>
+		<h1><%= title %></h1>
+		<div class="nav">
+			<ul>
+				<li><</li>
+				<li><a href="./">Comments</a></li>
+				<li>/</li>
+				<li><a href="/users">Information</a></li>
+				<li>></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+	<div id="d1"><h1>About Our Members</h1></div>
+	<table class="type11">
+		<colgroup>
+			<col width ="10%" />
+			<col width ="30%" />
+			<col width ="30%" />
+			<col width ="30%" />
+		</colgroup>
+			<thead>
+				<tr>
+				<th></th>
+				<th scope="cols">Name</th>
+				<th scope="cols">Major</th>
+				<th scope="cols">Github_id</th>
+				</tr>
+			</thead>
+		<!-- EJS 문법 : foreach -->
+		<tbody>
+		<% for (var user of userData) { %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.name %></td>
+				<td><%= user.major %></td>
+				<td><a href='https://github.com/<%= user.github_id %>'><%= user.github_id %></a></td>
+			</tr>
+		<% } %>
+		</tbody>
+		</table>
+	</main>
+
+	<footer>
+		<div>
+			<h1>HY-CoRA</h1>
+			<p>경기도 안산시 상록구 한양대학로55 학생복지관4층 425호</p>
+		</div>
+	</footer>
+
 	<!-- required for hot reload -->
 	<script src="/reload/reload.js"></script>
 </body>
