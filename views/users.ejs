@@ -26,14 +26,12 @@
 	<div id="d1"><h1>About Our Members</h1></div>
 	<table class="type11">
 		<colgroup>
-			<col width ="10%" />
-			<col width ="30%" />
-			<col width ="30%" />
-			<col width ="30%" />
+			<col width ="33%" />
+			<col width ="33%" />
+			<col width ="34%" />
 		</colgroup>
 			<thead>
 				<tr>
-				<th></th>
 				<th scope="cols">Name</th>
 				<th scope="cols">Major</th>
 				<th scope="cols">Github_id</th>
@@ -43,7 +41,6 @@
 		<tbody>
 		<% for (var user of userData) { %>
 			<tr>
-				<td><%= user.id %></td>
 				<td><%= user.name %></td>
 				<td><%= user.major %></td>
 				<td><a href='https://github.com/<%= user.github_id %>'><%= user.github_id %></a></td>
