@@ -11,10 +11,8 @@
 <body>
 	<header>
 		<h1><%= title %></h1>
-
 		<div class="nav">
 			<ul>
-				<li><</li>
 				<li><a href="./">Comments</a></li>
 				<li>/</li>
 				<li><a href="/users">Information</a></li>
@@ -24,14 +22,24 @@
 	</header>
 
 	<main>
-	<table>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Major</th>
-				<th>Github_id</th>
-			</tr>
+	<div id="d1"><h1>About Our Members</h1></div>
+	<table class="type11">
+		<colgroup>
+			<col width ="10%" />
+			<col width ="30%" />
+			<col width ="30%" />
+			<col width ="30%" />
+		</colgroup>
+			<thead>
+				<tr>
+				<th></th>
+				<th scope="cols">Name</th>
+				<th scope="cols">Major</th>
+				<th scope="cols">Github_id</th>
+				</tr>
+			</thead>
 		<!-- EJS 문법 : foreach -->
+		<tbody>
 		<% for (var user of userData) { %>
 			<tr>
 				<td><%= user.id %></td>
@@ -40,6 +48,7 @@
 				<td><%= user.github_id %></td>
 			</tr>
 		<% } %>
+		</tbody>
 		</table>
 	</main>
 
