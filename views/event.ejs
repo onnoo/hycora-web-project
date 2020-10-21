@@ -26,18 +26,22 @@
 	</header>
 
 	<main>
+		<h1>하이코라 야식사업 (10월 21일 18:00 ~ ) 선착순 7명</h1>
 		<!-- Comment List -->
 		<div id="comments">
 			<ul>
-				<form method="post" action="/addComment">
+				<form method="post" action="/event/addComment">
 					<li>
-						<input id="input" name="insertform" type="text" placeholder="한마디를 적어보세요." autocomplete="off">
+						<input id="input" name="insertform" type="text" placeholder="이름" autocomplete="off">
 					</li>
 					<!-- <input type="submit" value="쓰기" id="submit"> -->
 				</form>
 				<% for (var user of userData) { %>
 					<li>
 						<%= user.CONTENT %>
+						<span>
+							<%= moment(user.DATE).format('YYYY년 MM월 DD일 HH:mm:ss.SSS'); %>
+						</span>
 					</li>
 				<% } %>
 			</ul>

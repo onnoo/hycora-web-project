@@ -81,6 +81,11 @@ ul {
    	font-family: 'Nanum Myeongjo', serif;
 }
 
+#comments span {
+	font-size: 14px;
+	color: #AAAAAA;
+}
+
 #comments li:last-child {
 	border-bottom:0px;
 }
