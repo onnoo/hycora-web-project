@@ -12,6 +12,10 @@ var mainState = {
     // This function is called after the preload function
     // Here we set up the game, display sprites, etc.
 
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+
     // Change the background color of the game to blue
     game.stage.backgroundColor = "#71c5cf";
 
@@ -31,6 +35,7 @@ var mainState = {
     // Call the 'jump' function when the spacekey is hit
     var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     spaceKey.onDown.add(this.jump, this);
+    this.game.input.onDown.add(this.jump, this);
 
     // Create an empty group
     this.pipes = game.add.group();
@@ -107,7 +112,7 @@ var mainState = {
 };
 
 // Initialize Phaser, and create a 400px by 490px game
-var game = new Phaser.Game(400, 490);
+var game = new Phaser.Game(400, 490, Phaser.CANVAS);
 
 // Add the 'mainState' and call it 'main'
 game.state.add("main", mainState);
