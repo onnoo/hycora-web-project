@@ -12,6 +12,8 @@ var mainState = {
     // This function is called after the preload function
     // Here we set up the game, display sprites, etc.
 
+    game.forceSingleUpdate = true;
+
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
