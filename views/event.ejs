@@ -37,12 +37,26 @@
       <p>한 사람당 1번의 도전 기회가 주어집니다.</p>
       <p>자신의 이름과 학번을 정확하게 입력해 주세요.</p>
       <p>연습하기는 횟수 제한이 없습니다.</p>
-      <a class="btn btn-primary" href="/game">연습하기</a>
-      <a class="btn btn-warning" href="/game">도전하기</a>
+      <div class="container">
+        <a class="btn btn-primary" href="/game">연습하기</a>
+      </div>
+      <hr />
+      <div>
+        <form action="http://hycora-temp.herokuapp.com/" method="POST">
+          <label for="name">이름</label>
+          <input type="text" name="name" id="name" autocomplete="off" />
+          <label for="name">학번</label>
+          <input type="number" name="studentId" id="studentId" autocomplete="off" />
+          <input type="submit" class="btn btn-warning" value="도전하기">
+        </form>
+      </div>
       <h2>랭킹</h2>
       <ol>
-        <li>양재우 25점</li>
-        <li>양재우 2점</li>
+        <% for (var row of rank) { %>
+					<li>
+						<%= row.name %> <%= row.record %>
+					</li>
+				<% } %>
       </ol>
     </main>
 

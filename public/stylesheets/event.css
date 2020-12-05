@@ -49,3 +49,7 @@ ol {
 ol li {
   margin: 10px 0;
 }
+
+.container {
+  padding-bottom: 15px;
+}
