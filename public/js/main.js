@@ -49,6 +49,7 @@ var mainState = {
     // Call the 'jump' function when the spacekey is hit
     game.input.onDown.removeAll();
     spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    spaceKey.onDown.removeAll();
     spaceKey.onDown.add(this.jump, this);
     this.game.input.onDown.add(this.jump, this);
 
@@ -100,11 +101,12 @@ var mainState = {
     this.game.time.events.remove(this.timer);
     // this.game.state.start('main');
     this.game.input.onDown.removeAll();
+    spaceKey.onDown.removeAll();
     this.game.input.onDown.add(this.start_game, this);
+    spaceKey.onDown.add(this.start_game, this);
     this.label_start.text = "Click to restart";
     game.paused = true;
     gameStarted = false;
-    spaceKey.onDown.removeAll();
   },
 
   start_game: function () {
