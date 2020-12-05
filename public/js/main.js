@@ -1,4 +1,7 @@
 // Create our 'main' state that will contain the game
+
+var gameStarted = false;
+var gameRestarted = false;
 var mainState = {
   preload: function () {
     // This function will be executed at the beginning
@@ -6,6 +9,15 @@ var mainState = {
 
     game.load.image("bird", "assets/bird.png");
     game.load.image("pipe", "assets/pipe.png");
+  },
+
+  game_start: function () {
+    if (!gameStarted) {
+      this.bird.body.gravity.y = 1000;
+      this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
+      this.label_start.text = "";
+    }
+    gameStarted = true;
   },
 
   create: function () {
@@ -32,23 +44,37 @@ var mainState = {
     game.physics.arcade.enable(this.bird);
 
     // Add gravity to the bird to make it fall
-    this.bird.body.gravity.y = 1000;
+    // this.bird.body.gravity.y = 1000;
 
     // Call the 'jump' function when the spacekey is hit
-    var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    game.input.onDown.removeAll();
+    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     spaceKey.onDown.add(this.jump, this);
     this.game.input.onDown.add(this.jump, this);
 
     // Create an empty group
     this.pipes = game.add.group();
 
-    this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
+    // this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
 
     this.score = 0;
     this.labelScore = game.add.text(20, 20, "0", {
       font: "30px Arial",
       fill: "#ffffff",
     });
+
+    this.label_start = game.add.text(200, 200, "Click to start", {
+      font: "20px Arial",
+      fill: "#fff",
+    });
+    this.label_start.anchor.setTo(0.5, 0.5);
+
+    if (gameRestarted) {
+      this.game_start();
+    } else {
+      this.game.input.onDown.add(this.game_start, this);
+      spaceKey.onDown.add(this.game_start, this);
+    }
   },
 
   update: function () {
@@ -57,15 +83,34 @@ var mainState = {
 
     // If the bird is out of the screen (too high or too low)
     // Call the 'restartGame' function
-    if (this.bird.y < 0 || this.bird.y > 490) this.restartGame();
+    if (this.bird.y < 0 || this.bird.y > 490) this.restart_game();
 
     game.physics.arcade.overlap(
       this.bird,
       this.pipes,
-      this.restartGame,
+      this.restart_game,
       null,
       this
     );
+  },
+
+  // Restart the game
+  restart_game: function () {
+    // Start the 'main' state, which restarts the game
+    this.game.time.events.remove(this.timer);
+    // this.game.state.start('main');
+    this.game.input.onDown.removeAll();
+    this.game.input.onDown.add(this.start_game, this);
+    this.label_start.text = "Click to restart";
+    game.paused = true;
+    gameStarted = false;
+    spaceKey.onDown.removeAll();
+  },
+
+  start_game: function () {
+    game.paused = false;
+    gameRestarted = true;
+    this.game.state.start('main');
   },
 
   // Make the bird jump
