@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/normalize.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/event.css" />
+  </head>
 
-<head>
-	<title><%= title %></title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="/stylesheets/normalize.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
 
-<body>
-	<header>
-		<h1><%= title %></h1>
+      <div class="nav">
+        <ul>
+          <li><a href="./">Comments</a></li>
+          <li>/</li>
+          <li><a href="/event">Event</a></li>
+          <li>/</li>
+          <li><a href="/users">Contributor</a></li>
+        </ul>
+      </div>
+    </header>
 
-		<div class="nav">
-			<ul>
-				<li><</li>
-				<li><a href="./">Comments</a></li>
-				<li>/</li>
-				<li><a href="/event">Event</a></li>
-				<li>/</li>
-				<li><a href="/users">Information</a></li>
-				<li>></li>
-			</ul>
-		</div>
-	</header>
+    <main>
+      <h1>하이코라 기말고사 야식 이벤트</h1>
+      <p>행사기간 : 12월 6일 00시 00분 ~ 12월 9일 23시 59분</p>
+      <p>남은시간 : <span id="time"></span></p>
+      <hr />
+      <p>1등 : BBQ 황금올리브반반+황금알치즈볼</p>
+      <p>2 ~ 5등 : 투썸플레이스 떠먹는 케이크</p>
+      <p>6등 ~ 13등 : 스타벅스 아이스 카페아메리카노 Tall</p>
+      <hr />
+      <h2>도전 방법</h2>
+      <p>한 사람당 1번의 도전 기회가 주어집니다.</p>
+      <p>자신의 이름과 학번을 정확하게 입력해 주세요.</p>
+      <p>연습하기는 횟수 제한이 없습니다.</p>
+      <a class="btn btn-primary" href="/game">연습하기</a>
+      <a class="btn btn-warning" href="/game">도전하기</a>
+      <h2>랭킹</h2>
+      <ol>
+        <li>양재우 25점</li>
+        <li>양재우 2점</li>
+      </ol>
+    </main>
 
-	<main>
-		<h1>하이코라 야식사업 (10월 21일 18:00 ~ ) 선착순 15명</h1>
-		<!-- Comment List -->
-		<div id="comments">
-			<ul>
-				<form method="post" action="/event/addComment">
-					<li>
-						<input id="input" name="insertform" type="text" placeholder="이름" autocomplete="off">
-					</li>
-					<!-- <input type="submit" value="쓰기" id="submit"> -->
-				</form>
-				<% for (var user of userData) { %>
-					<li>
-						<%= user.CONTENT %>
-						<span>
-							<%= moment(user.DATE).format('YYYY년 MM월 DD일 HH:mm:ss.SSS'); %>
-						</span>
-					</li>
-				<% } %>
-			</ul>
-		</div>
-	</main>
+    <footer>
+      <div>
+        <h1>HY-CoRA</h1>
+        <p>경기도 안산시 상록구 한양대학로55 학생복지관4층 425호</p>
+      </div>
+    </footer>
 
-	<footer>
-		<div>
-			<h1>HY-CoRA</h1>
-			<p>경기도 안산시 상록구 한양대학로55 학생복지관4층 425호</p>
-		</div>
-	</footer>
-
-	<!-- required for hot reload -->
-	<script src="/reload/reload.js"></script>
-	<script>
-		const input = document.getElementById("input")
-		input.focus()
-	</script>
-</body>
-
+    <!-- required for hot reload -->
+    <script src="/reload/reload.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/event.js"></script>
+  </body>
 </html>

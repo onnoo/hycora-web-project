@@ -26,10 +26,9 @@ header a, header a:visited {
 
 .nav {
 	text-align: center;
-	padding: 10px;
+	padding: 10px 0;
 	margin-bottom: 30px;
 	margin: auto;
-	max-width: 70%;
 }
 
 .nav a {	
@@ -40,12 +39,21 @@ header a, header a:visited {
 .nav li {
 	display:inline;
 	font-size:15px;
-	margin: 0 10px;
+	margin: 0 3px;
 }
 
-main, footer > div {
-	max-width: 1200px;
-	margin: 0 auto;
+@media ( min-width: 768px ) {
+  main, footer > div {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+}
+
+@media ( min-width: 1024px ) {
+  main, footer > div {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 }
 
 main {
