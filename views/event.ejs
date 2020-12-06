@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title><%= title %></title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/stylesheets/normalize.css" />
@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <h1><%= title %></h1>
+      <h1>HY-CoRA</h1>
 
       <div class="nav">
         <ul>
@@ -39,20 +39,29 @@
       <hr />
       <div>
         <form action="http://hycora-temp.herokuapp.com/" method="POST">
-          <label for="name">이름</label>
-          <input type="text" name="name" id="name" autocomplete="off" />
-          <label for="name">학번</label>
-          <input type="number" name="studentId" id="studentId" autocomplete="off" />
-          <input type="submit" class="btn btn-warning" value="게임시작">
+          <label for="name"
+            >이름 <input type="text" name="name" id="name" autocomplete="off"
+          /></label>
+
+          <label for="name"
+            >학번
+            <input
+              type="number"
+              name="studentId"
+              id="studentId"
+              autocomplete="off"
+          /></label>
+
+          <input type="submit" class="btn btn-warning" value="게임시작" />
         </form>
       </div>
       <h2>랭킹</h2>
       <ol>
         <% for (var row of rank) { %>
-					<li>
-						<%= row.name %> (<%= row.student_id %>) : <%= row.record %>점 (시도 : <%= row.tries %>회)
-					</li>
-				<% } %>
+        <li>
+          <%= row.name %> (<%= row.student_id %>) : <%= row.record %>점 (시도 : <%= row.tries %>회)
+        </li>
+        <% } %>
       </ol>
     </main>
 

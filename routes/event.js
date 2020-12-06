@@ -17,7 +17,7 @@ router.get("/", function (req, res, next) {
   fetch("http://hycora-temp.herokuapp.com/ranking")
     .then((response) => response.json())
     .then((data) => {
-      res.render("event", { title: "HY-CoRA", rank: data['rank'] });
+      res.render("event", { title: "HY-CoRA 기말고사 야식 이벤트", rank: data['rank'] });
     });
 });
 

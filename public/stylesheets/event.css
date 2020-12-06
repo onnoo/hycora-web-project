@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300&display=swap");
 
 main {
   text-align: center;
 }
 
-h1, h2 {
-  font-family: 'Do Hyeon', sans-serif;
+h1,
+h2 {
+  font-family: "Do Hyeon", sans-serif;
 }
 
 p {
-  font-family: 'Noto Sans KR', sans-serif
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 hr {
@@ -17,12 +18,12 @@ hr {
 }
 
 .btn {
-  padding: 0.375rem .75rem;
-  margin: .25rem 0;
+  padding: 0.375rem 0.75rem;
+  margin: 0.25rem 0;
   border: 1px solid green;
   text-align: center;
   vertical-align: middle;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   cursor: pointer;
   text-decoration: none;
 }
@@ -44,7 +45,7 @@ ol {
   margin: 0;
   display: inline-block;
   text-align: left;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 ol li {
@@ -54,4 +55,10 @@ ol li {
 
 .container {
   padding-bottom: 15px;
+}
+
+label {
+  display: block;
+  clear: both;
+  margin: 5px;
 }
