@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get("/", function (req, res, next) {
-  fetch("http://hycora-temp.herokuapp.com/test")
+  fetch("http://hycora-temp.herokuapp.com/ranking")
     .then((response) => response.json())
     .then((data) => {
       res.render("event", { title: "HY-CoRA", rank: data['rank'] });

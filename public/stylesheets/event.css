@@ -44,10 +44,12 @@ ol {
   margin: 0;
   display: inline-block;
   text-align: left;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 ol li {
   margin: 10px 0;
+  font-size: 12pt;
 }
 
 .container {
