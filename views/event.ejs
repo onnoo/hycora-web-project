@@ -27,7 +27,7 @@
     <main>
       <h1>하이코라 기말고사 야식 이벤트</h1>
       <p>행사기간 : 12월 6일 00시 00분 ~ 12월 9일 23시 59분</p>
-      <p>남은시간 : <span id="time"></span></p>
+      <p id="time"></p>
       <hr />
       <p>1등 : BBQ 황금올리브반반+황금알치즈볼</p>
       <p>2 ~ 5등 : 투썸플레이스 떠먹는 케이크</p>
@@ -37,7 +37,7 @@
       <p>1. 자신의 이름과 학번을 정확하게 입력해 주세요.</p>
       <p>2. 게임시작 버튼을 누르면 게임 페이지로 이동합니다.</p>
       <hr />
-      <div>
+      <div id="play">
         <form action="http://hycora-temp.herokuapp.com/" method="POST">
           <label for="name"
             >이름 <input type="text" name="name" id="name" autocomplete="off"

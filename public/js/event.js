@@ -5,8 +5,22 @@ window.onload = function() {
 function updateTime() {
   var now = moment();
   var end = moment('2020-12-09 23:59:59');
-  var diff = end.subtract(now);
-  document.getElementById('time').innerText = diff.format('DD일 HH:mm:ss');
+  var diff = end.diff(now);
+  
+  if (diff < 0) {
+    document.getElementById('time').innerText = '';
+    document.getElementById('play').style.display = "none";
+    clearInterval(interval);
+  } else {
+    var diffTime = {
+      day: moment.duration(end.diff(now)).days(),
+      hour: moment.duration(end.diff(now)).hours(),
+      minute: moment.duration(end.diff(now)).minutes(),
+      second: moment.duration(end.diff(now)).seconds(),
+    }
+    var formed = diffTime.day + '일 ' + diffTime.hour + '시간 ' + diffTime.minute + '분 ' + diffTime.second + '초';
+    document.getElementById('time').innerText = '남은시간 : ' + formed;
+  }
 }
 
-setInterval(updateTime, 1000);
+interval = setInterval(updateTime, 1000);
