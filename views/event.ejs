@@ -57,11 +57,17 @@
       </div>
       <h2>랭킹</h2>
       <ol>
-        <% for (var row of rank) { %>
-        <li>
-          <%= row.name %> (<%= row.student_id %>) : <%= row.record %>점 (시도 : <%= row.tries %>회)
-        </li>
-        <% } %>
+        <% rank.forEach((row, i) => { %>
+          <% if (i == 0) { %>
+            <li class="winner">
+              <%= row.name %> (<%= row.student_id %>) : <%= row.record %>점 (시도 : <%= row.tries %>회)
+            </li>
+          <% } else { %>
+            <li>
+              <%= row.name %> (<%= row.student_id %>) : <%= row.record %>점 (시도 : <%= row.tries %>회)
+            </li>
+          <% } %>
+        <% }); %>
       </ol>
     </main>
 
