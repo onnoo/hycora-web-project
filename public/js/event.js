@@ -4,7 +4,7 @@ window.onload = function() {
 
 function updateTime() {
   var now = moment();
-  var end = moment('2020-12-09 23:59:59');
+  var end = moment('2021-06-15 23:59:59');
   var diff = end.diff(now);
   
   if (diff < 0) {
