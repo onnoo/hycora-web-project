@@ -4,11 +4,32 @@
 <head>
 	<title><%= title %></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="/stylesheets/normalize.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+<<<<<<< HEAD
+	<script>
+		function addElement () {
+			const newChild = document.createElement('li');
+			const textNode = document.createTextNode(document.getElementById('input').value);
+			newChild.appendChild(textNode);
+			const parent = document.getElementById('comments');
+			const children = parent.childNodes;
 
+			if(children.length=0){
+				parent.appendChild(newChild)
+			}
+			else{
+				const fistChild = children[0]
+				parent.insertBefore(newChild, fistChild);
+			}
+			document.getElementById('input').value = ''
+		}		
+
+	</script>
+=======
+>>>>>>> upstream/develop
+</head>
 <body>
+<<<<<<< HEAD
 	<header>
 		<h1><%= title %></h1>
 
@@ -50,13 +71,38 @@
 			<p>경기도 안산시 상록구 한양대학로55 학생복지관4층 425호</p>
 		</div>
 	</footer>
+=======
+	<!-- Title -->
+	<h1><%= title %></h1>
+
+	<!-- Navigation Bar -->
+	<div id="nav">
+		<ul>
+		  <li><a href="./">Comments</a></li>
+		  <li><a href="/users">Information</a></li>	  
+		</ul>
+	</div>
+
+	<!-- Comment Insert Form -->
+	<form method="post" action="/addComment">
+		<input name="insertform" type="text" id="input">
+		<input type="submit" value="쓰기" id="submit">
+	</form>
+
+	<!-- Comment List -->
+	<div id="comments">
+		<ul>
+			<% for (var user of userData) { %>
+				<li>
+					<%= user.CONTENT %>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+>>>>>>> c3c79b180ec45556d5ca2cac1d957259fa0e7a3a
 
 	<!-- required for hot reload -->
-	<script src="/reload/reload.js"></script>
-	<script>
-		const input = document.getElementById("input")
-		input.focus()
-	</script>
+	<script src="/reload/reload.js"></script>	
 </body>
 
 </html>
