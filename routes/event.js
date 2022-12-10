@@ -14,11 +14,12 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get("/", function (req, res, next) {
-  fetch("http://hycora-temp.herokuapp.com/ranking")
-    .then((response) => response.json())
-    .then((data) => {
-      res.render("event", { title: "HY-CoRA 기말고사 야식 이벤트", rank: data['rank'] });
-    });
+  // fetch("http://hycora-temp.herokuapp.com/ranking")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     res.render("event", { title: "HY-CoRA 기말고사 야식 이벤트", rank: data['rank'] });
+  //   });
+  res.render("event", { title: "HY-CoRA 기말고사 야식 이벤트", rank: [] });
 });
 
 router.post("/addComment", function (req, res, next) {
